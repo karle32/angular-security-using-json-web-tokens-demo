@@ -1,7 +1,35 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { ProductListComponent } from "./product/product-list.component";
+import { CategoryListComponent } from './category/category-list.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProductDetailComponent } from './product/product-detail.component';
+
+const routes: Routes = [
+  {
+    path: 'dashboard', 
+    component: DashboardComponent
+  },
+  { 
+    path: 'products', 
+    component: ProductListComponent
+  },
+  { 
+    path: 'productDetail/:id', 
+    component: ProductDetailComponent
+  },
+  {
+    path: 'categories',
+    component: CategoryListComponent
+  },
+  {
+    path: '', redirectTo: 'dashboard', pathMatch: 'full'
+  },
+  {
+    path: '**', component: DashboardComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
