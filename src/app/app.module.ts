@@ -11,6 +11,8 @@ import { CategoryService } from './category/category.service';
 import { CategoryListComponent } from './category/category-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SecurityService } from './security/security.service';
+import { LoginComponent } from './security/login.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ProductListComponent,
     ProductDetailComponent,
     CategoryListComponent,
-    DashboardComponent
+    DashboardComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [ProductService, CategoryService],
+  providers: [ProductService, CategoryService, SecurityService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
