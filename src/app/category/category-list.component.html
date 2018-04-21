@@ -6,7 +6,8 @@
 
 <div class="row">
   <div class="col-xs-12">
-    <button class="btn btn-primary">
+    <button class="btn btn-primary"
+      *ngIf="securityObject.canAddCategory">
       Add New Category
     </button>
   </div>

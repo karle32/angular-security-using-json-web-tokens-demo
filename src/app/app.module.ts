@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SecurityService } from './security/security.service';
 import { LoginComponent } from './security/login.component';
+import { AuthGuard } from './security/auth.guard';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { LoginComponent } from './security/login.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [ProductService, CategoryService, SecurityService],
+  providers: [ProductService, CategoryService, SecurityService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
